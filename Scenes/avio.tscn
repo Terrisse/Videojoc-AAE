@@ -6,10 +6,7 @@
 [ext_resource path="res://Images/avions/avio1/avio1_3.png" type="Texture" id=4]
 [ext_resource path="res://Images/avions/avio1/avio1_4.png" type="Texture" id=5]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 24.4, 20.0001 )
-
-[sub_resource type="SpriteFrames" id=2]
+[sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 1 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],
 "loop": true,
@@ -17,18 +14,20 @@ animations = [ {
 "speed": 7.0
 } ]
 
+[sub_resource type="CircleShape2D" id=2]
+radius = 10.352
+
 [node name="Area2D" type="Area2D"]
 scale = Vector2( 0.5, 0.5 )
 script = ExtResource( 2 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2( 187, 84 )
-shape = SubResource( 1 )
-
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 159, 83 )
-frames = SubResource( 2 )
+frames = SubResource( 1 )
 animation = "avio1"
-frame = 3
 playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2( 200.1, 79.7281 )
+shape = SubResource( 2 )
