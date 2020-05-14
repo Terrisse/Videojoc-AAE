@@ -15,20 +15,26 @@ animations = [ {
 } ]
 
 [sub_resource type="CircleShape2D" id=2]
-radius = 10.352
+radius = 7.42014
 
-[node name="Area2D" type="Area2D"]
+[node name="avio" type="Area2D"]
 scale = Vector2( 0.5, 0.5 )
 script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 159, 83 )
+position = Vector2( -94.5712, 171.889 )
+scale = Vector2( 0.766989, 0.829975 )
 frames = SubResource( 1 )
 animation = "avio1"
-frame = 2
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2( 200.1, 79.7281 )
+position = Vector2( -62.766, 170.188 )
 shape = SubResource( 2 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+limit_left = 0
+limit_top = 0
+limit_smoothed = true

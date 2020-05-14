@@ -20,17 +20,19 @@ func _process(delta):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func mou(delta):
 	if Input.is_action_pressed("adalt"):
-		moviment.y-=1
+		moviment.y=-200
 	elif Input.is_action_pressed("abaix"):
-		moviment.y+=1
+		moviment.y=200
 	else:
 		moviment=Vector2.ZERO
+	moviment.x= 200
+	
 	
 	#hem de normalitzar la velocitat ja que en el cas que vagi en diagonal anirà més ràpid 
-	if moviment.length()>0: #en aquest cas s'estarà movent
-		moviment=moviment.normalized()*velocitat
+	#if moviment.length()>0: #en aquest cas s'estarà movent
+		#moviment=moviment.normalized()*velocitat
 	position+=moviment * delta
-	position.y=clamp(position.y,10,pantalla.y-100)
+	#position.y=clamp(position.y,10,pantalla.y-100)
 	
 func anima():
 	pass
