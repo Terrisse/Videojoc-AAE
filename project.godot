@@ -16,7 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Ausies March"
-run/main_scene="res://Scenes/joc.tscn"
+run/main_scene="res://Scenes/menus/Menu de inici.tscn"
 config/icon="res://icon.png"
 
 [display]

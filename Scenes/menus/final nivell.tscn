@@ -1,0 +1,37 @@
+[gd_scene format=2]
+
+[node name="final nivell" type="Node2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_left = 100.061
+margin_top = 83.4003
+margin_right = 213.061
+margin_bottom = 131.4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+margin_right = 113.0
+margin_bottom = 20.0
+text = "Següent nivell"
+flat = true
+
+[node name="Button2" type="Button" parent="VBoxContainer"]
+margin_top = 24.0
+margin_right = 113.0
+margin_bottom = 44.0
+text = "Sortir"
+flat = true
+
+[node name="Label" type="Label" parent="."]
+margin_left = 110.368
+margin_top = 41.5807
+margin_right = 203.368
+margin_bottom = 55.5807
+text = "Nivell superat!"
+__meta__ = {
+"_edit_use_anchors_": false
+}

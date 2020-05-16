@@ -1,0 +1,7 @@
+[gd_scene format=2]
+
+[node name="nivell 2" type="Node"]
+
+[node name="fons" type="Node" parent="."]
+
+[node name="Sprite" type="Sprite" parent="fons"]
