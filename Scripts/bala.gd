@@ -1,5 +1,5 @@
 extends Area2D
-var velocitat_bala=200
+var velocitat_bala=400
 var moviment_bala=Vector2()
 
 # Declare member variables here. Examples:
@@ -18,7 +18,7 @@ func _process(delta):
 	
 func mou_bala(delta):
 	#hem de normalitzar la velocitat ja que en el cas que vagi en diagonal anirà més ràpid 
-	moviment_bala.x+=1
+	moviment_bala.x+=5
 	moviment_bala=moviment_bala.normalized()*velocitat_bala
 	position+=moviment_bala * delta
 	

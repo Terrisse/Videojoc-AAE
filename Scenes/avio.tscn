@@ -13,9 +13,12 @@ animations = [ {
 "name": "avio1",
 "speed": 7.0
 } ]
+
 [sub_resource type="CircleShape2D" id=2]
 radius = 7.42014
+
 [node name="avio" type="Area2D"]
+position = Vector2( 40, 89 )
 scale = Vector2( 0.5, 0.5 )
 script = ExtResource( 2 )
 __meta__ = {
@@ -23,25 +26,29 @@ __meta__ = {
 }
 
 [node name="Posicio_avio" type="Position2D" parent="."]
-position = Vector2( 42, 4 )
+position = Vector2( 40, 0 )
 scale = Vector2( 2, 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-
-position = Vector2( -94.5712, 171.889 )
+position = Vector2( -10.5712, 1.88899 )
 scale = Vector2( 0.766989, 0.829975 )
 frames = SubResource( 1 )
 animation = "avio1"
-frame = 1
+frame = 2
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -62.766, 170.188 )
+position = Vector2( 1.23401, -1.81198 )
 shape = SubResource( 2 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( -2, 2 )
 current = true
 limit_left = 0
 limit_top = 0
 limit_smoothed = true
 
+[node name="Timer_temps_bala" type="Timer" parent="."]
+wait_time = 0.3
+one_shot = true
+autostart = true
