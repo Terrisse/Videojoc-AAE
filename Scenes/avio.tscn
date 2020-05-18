@@ -18,7 +18,7 @@ animations = [ {
 radius = 7.42014
 
 [node name="avio" type="Area2D"]
-position = Vector2( 40, 89 )
+position = Vector2( -52.4894, 108.717 )
 scale = Vector2( 0.5, 0.5 )
 script = ExtResource( 2 )
 __meta__ = {
@@ -34,7 +34,7 @@ position = Vector2( -10.5712, 1.88899 )
 scale = Vector2( 0.766989, 0.829975 )
 frames = SubResource( 1 )
 animation = "avio1"
-frame = 2
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
