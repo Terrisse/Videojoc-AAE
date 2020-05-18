@@ -1,10 +1,12 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Images/imatges mapes/nivell 1/nivell1tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Images/imatges mapes/nivell 1/terra 2.png" type="Texture" id=2]
 [ext_resource path="res://Images/imatges mapes/nivell 1/cel.png" type="Texture" id=3]
 [ext_resource path="res://Scenes/nivells/gp!.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/avio.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/enemics i obstacles/explosió 1.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/enemics i obstacles/explosió 1b.tscn" type="PackedScene" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 21342.8, 19.6726 )
@@ -52,3 +54,85 @@ position = Vector2( 28.3156, 22.6137 )
 position = Vector2( 9588.72, 166.825 )
 scale = Vector2( 0.5, 0.5 )
 shape = SubResource( 1 )
+
+[node name="explosions del dret" type="Node2D" parent="."]
+
+[node name="explosió 2" parent="explosions del dret" instance=ExtResource( 6 )]
+position = Vector2( 172.747, 136.727 )
+
+[node name="explosió 3" parent="explosions del dret" instance=ExtResource( 6 )]
+position = Vector2( 668.936, 137.463 )
+
+[node name="explosió 4" parent="explosions del dret" instance=ExtResource( 6 )]
+position = Vector2( 1154.83, 119.82 )
+
+[node name="explosió 5" parent="explosions del dret" instance=ExtResource( 6 )]
+position = Vector2( 735.094, 134.522 )
+
+[node name="explosió 6" parent="explosions del dret" instance=ExtResource( 6 )]
+position = Vector2( 1625.29, 116.145 )
+
+[node name="explosió 7" parent="explosions del dret" instance=ExtResource( 6 )]
+position = Vector2( 2217.78, 119.085 )
+
+[node name="explosió 8" parent="explosions del dret" instance=ExtResource( 6 )]
+position = Vector2( 2882.3, 118.35 )
+
+[node name="explosió 9" parent="explosions del dret" instance=ExtResource( 6 )]
+position = Vector2( 3008.74, 121.291 )
+
+[node name="explosió 10" parent="explosions del dret" instance=ExtResource( 6 )]
+position = Vector2( 3745.3, 120.555 )
+
+[node name="explosió 11" parent="explosions del dret" instance=ExtResource( 6 )]
+position = Vector2( 3831.31, 118.35 )
+
+[node name="explosió 12" parent="explosions del dret" instance=ExtResource( 6 )]
+position = Vector2( 4326.76, 115.41 )
+
+[node name="explosió 13" parent="explosions del dret" instance=ExtResource( 6 )]
+position = Vector2( 4923.66, 116.88 )
+
+[node name="explosions del reves" type="Node2D" parent="."]
+
+[node name="explosió 1" parent="explosions del reves" instance=ExtResource( 7 )]
+position = Vector2( 411.653, 42.6355 )
+
+[node name="explosió 3" parent="explosions del reves" instance=ExtResource( 7 )]
+position = Vector2( 967.384, 41.1653 )
+
+[node name="explosió 2" parent="explosions del reves" instance=ExtResource( 7 )]
+position = Vector2( 1363.6, 41.9004 )
+
+[node name="explosió 4" parent="explosions del reves" instance=ExtResource( 7 )]
+position = Vector2( 1885.52, 41.9004 )
+
+[node name="explosió 5" parent="explosions del reves" instance=ExtResource( 7 )]
+position = Vector2( 1978.87, 40.4302 )
+
+[node name="explosió 6" parent="explosions del reves" instance=ExtResource( 7 )]
+position = Vector2( 2461.1, 43.3706 )
+
+[node name="explosió 7" parent="explosions del reves" instance=ExtResource( 7 )]
+position = Vector2( 2632.37, 42.6355 )
+
+[node name="explosió 8" parent="explosions del reves" instance=ExtResource( 7 )]
+position = Vector2( 3282.2, 41.9004 )
+
+[node name="explosió 9" parent="explosions del reves" instance=ExtResource( 7 )]
+position = Vector2( 3373.35, 42.6355 )
+
+[node name="explosió 10" parent="explosions del reves" instance=ExtResource( 7 )]
+position = Vector2( 3461.56, 41.9004 )
+
+[node name="explosió 11" parent="explosions del reves" instance=ExtResource( 7 )]
+position = Vector2( 4066.54, 41.9003 )
+
+[node name="explosió 12" parent="explosions del reves" instance=ExtResource( 7 )]
+position = Vector2( 4628.89, 41.9003 )
+
+[node name="explosió 13" parent="explosions del reves" instance=ExtResource( 7 )]
+position = Vector2( 5167.71, 41.9003 )
+
+[node name="explosió 14" parent="explosions del reves" instance=ExtResource( 7 )]
+position = Vector2( 5315.47, 41.1652 )
