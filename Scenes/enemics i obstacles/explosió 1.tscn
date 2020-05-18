@@ -30,21 +30,23 @@
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 13 ), ExtResource( 5 ), ExtResource( 15 ), ExtResource( 20 ), ExtResource( 17 ), ExtResource( 24 ), ExtResource( 14 ), ExtResource( 10 ), ExtResource( 6 ), ExtResource( 11 ), ExtResource( 18 ), ExtResource( 16 ), ExtResource( 19 ), ExtResource( 21 ), ExtResource( 7 ), ExtResource( 22 ), ExtResource( 25 ), ExtResource( 3 ), ExtResource( 23 ), ExtResource( 4 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 12 ), ExtResource( 26 ) ],
-"loop": false,
+"loop": true,
 "name": "default",
 "speed": 20.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=2]
-radius = 21.5051
-height = 62.6323
+radius = 12.8989
+height = 48.6705
 
 [node name="explosió 1" type="StaticBody2D"]
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 0.854916, 0.81873 )
 frames = SubResource( 1 )
-frame = 13
+frame = 6
+playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -2.7662, -3.38092 )
+position = Vector2( -1.22942, 0.614716 )
 shape = SubResource( 2 )
