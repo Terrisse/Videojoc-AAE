@@ -7,6 +7,9 @@ onready var Posicio_avio=$Posicio_avio
 onready var Timer_temps_bala=$Timer_temps_bala
 var bala= load("res://Scenes/bala.tscn")
 var direccio_bala=Vector2()
+signal explosio_collision
+var fi_joc=false
+
 
 
 
@@ -15,6 +18,7 @@ var direccio_bala=Vector2()
 func _ready():
 	#hide() #amago a fatboy perquè surti el menú inicial
 	pantalla=get_viewport_rect().size
+	fi_joc=false
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -42,8 +46,10 @@ func mou(delta):
 		moviment.y=200
 	else:
 		moviment=Vector2.ZERO
-	moviment.x= 200
-	
+	if fi_joc==false:
+		moviment.x= 200
+	else:
+		moviment.x=0
 	
 	#hem de normalitzar la velocitat ja que en el cas que vagi en diagonal anirà més ràpid 
 	#if moviment.length()>0: #en aquest cas s'estarà movent
@@ -53,3 +59,28 @@ func mou(delta):
 	
 func anima():
 	pass
+
+
+func _on_avio_body_entered(body):
+	pass # Replace with function body.
+	if body.is_in_group("explosio"):
+		emit_signal("explosio_collision")
+	
+	
+	
+	
+
+	
+func game_over():
+	pass
+	
+
+
+func _on_avio_explosio_collision():
+	print("ha colisionat")
+	$AnimatedSprite.hide()
+	fi_joc=true
+	get_tree().change_scene("res://Scenes/menus/Menu de inici.tscn")
+	
+	
+	

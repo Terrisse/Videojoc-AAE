@@ -39,11 +39,14 @@ animations = [ {
 radius = 19.6651
 height = 44.3075
 
-[node name="explosió 1" type="StaticBody2D"]
+[node name="explosió 1" type="StaticBody2D" groups=[
+"explosio",
+]]
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 0.873427, 0.873427 )
 frames = SubResource( 1 )
+frame = 22
 playing = true
 flip_v = true
 
