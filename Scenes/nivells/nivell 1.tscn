@@ -50,7 +50,9 @@ position = Vector2( 28.3156, 22.6137 )
 
 [node name="limit" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="limit"]
+[node name="terra" type="CollisionShape2D" parent="limit" groups=[
+"terra",
+]]
 position = Vector2( 9587.72, 166.825 )
 scale = Vector2( 0.5, 0.5 )
 shape = SubResource( 1 )
@@ -136,3 +138,4 @@ position = Vector2( 5167.71, 41.9003 )
 
 [node name="explosió 14" parent="explosions del reves" instance=ExtResource( 7 )]
 position = Vector2( 5315.47, 41.1652 )
+[connection signal="terra_collision" from="avio" to="avio" method="_on_avio_terra_collision"]
