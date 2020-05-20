@@ -15,10 +15,10 @@ animations = [ {
 } ]
 
 [sub_resource type="CircleShape2D" id=2]
-radius = 7.42014
+radius = 21.6286
 
 [node name="avio" type="Area2D"]
-position = Vector2( -52.4894, 108.717 )
+position = Vector2( -41.9749, 103.96 )
 scale = Vector2( 0.5, 0.5 )
 script = ExtResource( 2 )
 __meta__ = {
@@ -26,6 +26,7 @@ __meta__ = {
 }
 
 [node name="Posicio_avio" type="Position2D" parent="."]
+visible = false
 position = Vector2( 40, 0 )
 scale = Vector2( 2, 2 )
 
@@ -41,6 +42,7 @@ position = Vector2( 1.23401, -1.81198 )
 shape = SubResource( 2 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
+visible = false
 position = Vector2( -2, 2 )
 current = true
 limit_left = 0
