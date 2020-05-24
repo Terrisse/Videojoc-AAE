@@ -83,7 +83,7 @@ func _on_avio_explosio_collision():
 	print("ha colisionat")
 	$AnimatedSprite.hide()
 	fi_joc=true
-	get_tree().change_scene("res://Scenes/menus/Menu de inici.tscn")
+	get_tree().change_scene("res://Scenes/menus/has perdut.tscn")
 	
 	
 	

@@ -35,7 +35,7 @@ position = Vector2( -10.5712, 1.88899 )
 scale = Vector2( 0.766989, 0.829975 )
 frames = SubResource( 1 )
 animation = "avio1"
-frame = 2
+frame = 3
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -48,6 +48,7 @@ position = Vector2( -2, 2 )
 current = true
 limit_left = 0
 limit_top = 0
+limit_bottom = -180
 limit_smoothed = true
 
 [node name="Timer_temps_bala" type="Timer" parent="."]
