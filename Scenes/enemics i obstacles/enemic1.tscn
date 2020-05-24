@@ -16,11 +16,10 @@ animations = [ {
 [sub_resource type="CircleShape2D" id=2]
 radius = 12.1632
 
-[node name="enemic_peix" type="KinematicBody2D"]
+[node name="enemic1" type="KinematicBody2D"]
 
 [node name="animació" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
-frame = 2
 playing = true
 flip_h = true
 

@@ -10,7 +10,9 @@ var bala= load("res://Scenes/bala.tscn")
 var direccio_bala=Vector2()
 signal explosio_collision
 signal terra_collision
+signal collisio_amb_enemic1
 var fi_joc=false
+
 
 
 
@@ -60,6 +62,7 @@ func mou(delta):
 	position+=moviment * delta
 	position.y=clamp(position.y,10,pantalla.y-40)
 	
+
 func anima():
 	pass
 
@@ -68,23 +71,17 @@ func _on_avio_body_entered(body):
 	pass # Replace with function body.
 	if body.is_in_group("explosio"):
 		emit_signal("explosio_collision")
-	
-	
+		fi_joc=true
+		pass
+	if body.is_in_group("enemic1"):
+		emit_signal("collisio_amb_enemic1")
 	
 	
 
 	
-func game_over():
-	pass
-	
 
 
-func _on_avio_explosio_collision():
-	print("ha colisionat")
-	$AnimatedSprite.hide()
-	fi_joc=true
-	get_tree().change_scene("res://Scenes/menus/has perdut.tscn")
-	
+
 	
 	
 
