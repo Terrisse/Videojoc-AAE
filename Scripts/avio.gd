@@ -52,7 +52,7 @@ func mou(delta):
 	else:
 		moviment=Vector2.ZERO
 	if fi_joc==false:
-		moviment.x= 200
+		moviment.x= 100
 	else:
 		moviment.x=0
 	
@@ -77,14 +77,3 @@ func _on_avio_body_entered(body):
 		emit_signal("collisio_amb_enemic1")
 	
 	
-
-	
-
-
-
-	
-	
-
-
-func _on_avio_terra_collision():
-	pass # Replace with function body.

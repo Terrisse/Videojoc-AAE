@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Images/imatges mapes/nivell 1/nivell1tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Images/imatges mapes/nivell 1/terra 2.png" type="Texture" id=2]
@@ -9,7 +9,6 @@
 [ext_resource path="res://Scenes/enemics i obstacles/explosió 1b.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scripts/nivell 1.gd" type="Script" id=8]
 [ext_resource path="res://Scenes/enemics i obstacles/enemic1.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Scenes/enemics i obstacles/enemic1.gd" type="Script" id=10]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 21342.8, 19.6726 )
@@ -148,8 +147,7 @@ shape = SubResource( 1 )
 [node name="enemic1" parent="." groups=[
 "enemic1",
 ] instance=ExtResource( 9 )]
-position = Vector2( 38, -39 )
-script = ExtResource( 10 )
+position = Vector2( 693, 217 )
 
 [node name="Timer_inici_joc" type="Timer" parent="."]
 one_shot = true

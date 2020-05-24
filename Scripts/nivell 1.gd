@@ -13,6 +13,7 @@ var inici_nivell_1 =false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$Timer_inici_joc.start()
+	randomize()
 	
 	
 	
@@ -36,8 +37,11 @@ func _on_Timer_inici_joc_timeout():
 func _on_Timer_nou_enemic_timeout():
 	
 	var E = enemic1.instance()
-	E.position=$avio.position
-	E.position.x+=1000
+	E.position.x=$avio.position.x + 1000
+	E.position.y= randi() % 800
+	
+	
+	#E.position.x+=1000
 	add_child(E) # es crea un nou enemic
 	print('creacioenemic')
 	
@@ -52,5 +56,5 @@ func _on_avio_explosio_collision():
 
 
 func _on_avio_collisio_amb_enemic1():
-	#game_over_nivell_1() coco
+	game_over_nivell_1() 
 	pass 
