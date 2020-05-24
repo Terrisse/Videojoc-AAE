@@ -57,44 +57,6 @@ position = Vector2( 9587.72, 166.825 )
 scale = Vector2( 0.5, 0.5 )
 shape = SubResource( 1 )
 
-[node name="explosions del dret" type="Node2D" parent="."]
-
-[node name="explosió 2" parent="explosions del dret" instance=ExtResource( 6 )]
-position = Vector2( 172.747, 136.727 )
-
-[node name="explosió 3" parent="explosions del dret" instance=ExtResource( 6 )]
-position = Vector2( 668.936, 137.463 )
-
-[node name="explosió 4" parent="explosions del dret" instance=ExtResource( 6 )]
-position = Vector2( 1154.83, 119.82 )
-
-[node name="explosió 5" parent="explosions del dret" instance=ExtResource( 6 )]
-position = Vector2( 735.094, 134.522 )
-
-[node name="explosió 6" parent="explosions del dret" instance=ExtResource( 6 )]
-position = Vector2( 1625.29, 116.145 )
-
-[node name="explosió 7" parent="explosions del dret" instance=ExtResource( 6 )]
-position = Vector2( 2217.78, 119.085 )
-
-[node name="explosió 8" parent="explosions del dret" instance=ExtResource( 6 )]
-position = Vector2( 2882.3, 118.35 )
-
-[node name="explosió 9" parent="explosions del dret" instance=ExtResource( 6 )]
-position = Vector2( 3008.74, 121.291 )
-
-[node name="explosió 10" parent="explosions del dret" instance=ExtResource( 6 )]
-position = Vector2( 3745.3, 120.555 )
-
-[node name="explosió 11" parent="explosions del dret" instance=ExtResource( 6 )]
-position = Vector2( 3831.31, 118.35 )
-
-[node name="explosió 12" parent="explosions del dret" instance=ExtResource( 6 )]
-position = Vector2( 4326.76, 115.41 )
-
-[node name="explosió 13" parent="explosions del dret" instance=ExtResource( 6 )]
-position = Vector2( 4923.66, 116.88 )
-
 [node name="explosions del reves" type="Node2D" parent="."]
 
 [node name="explosió 1" parent="explosions del reves" instance=ExtResource( 7 )]
@@ -138,4 +100,42 @@ position = Vector2( 5167.71, 41.9003 )
 
 [node name="explosió 14" parent="explosions del reves" instance=ExtResource( 7 )]
 position = Vector2( 5315.47, 41.1652 )
+
+[node name="explosions del dret" type="Node2D" parent="."]
+
+[node name="explosió 2" parent="explosions del dret" instance=ExtResource( 6 )]
+position = Vector2( 172.747, 136.727 )
+
+[node name="explosió 3" parent="explosions del dret" instance=ExtResource( 6 )]
+position = Vector2( 668.936, 137.463 )
+
+[node name="explosió 4" parent="explosions del dret" instance=ExtResource( 6 )]
+position = Vector2( 1154.83, 119.82 )
+
+[node name="explosió 5" parent="explosions del dret" instance=ExtResource( 6 )]
+position = Vector2( 735.094, 134.522 )
+
+[node name="explosió 6" parent="explosions del dret" instance=ExtResource( 6 )]
+position = Vector2( 1625.29, 116.145 )
+
+[node name="explosió 7" parent="explosions del dret" instance=ExtResource( 6 )]
+position = Vector2( 2217.78, 119.085 )
+
+[node name="explosió 8" parent="explosions del dret" instance=ExtResource( 6 )]
+position = Vector2( 2882.3, 118.35 )
+
+[node name="explosió 9" parent="explosions del dret" instance=ExtResource( 6 )]
+position = Vector2( 3008.74, 121.291 )
+
+[node name="explosió 10" parent="explosions del dret" instance=ExtResource( 6 )]
+position = Vector2( 3745.3, 120.555 )
+
+[node name="explosió 11" parent="explosions del dret" instance=ExtResource( 6 )]
+position = Vector2( 3831.31, 118.35 )
+
+[node name="explosió 12" parent="explosions del dret" instance=ExtResource( 6 )]
+position = Vector2( 4326.76, 115.41 )
+
+[node name="explosió 13" parent="explosions del dret" instance=ExtResource( 6 )]
+position = Vector2( 4923.66, 116.88 )
 [connection signal="terra_collision" from="avio" to="avio" method="_on_avio_terra_collision"]
