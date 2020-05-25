@@ -1,0 +1,53 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Images/fonts/911Fonts.com_CenturyGothicBoldItalic__-_911fonts.com_fonts_kjcn.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Images/menus/9d517609989d9ca3f81c66ad8bc602ff.png" type="Texture" id=2]
+[ext_resource path="res://Images/fonts/chinese rocks rg.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Scripts/has perdut.gd" type="Script" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 24
+font_data = ExtResource( 3 )
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 160.953, 90.1517 )
+scale = Vector2( 0.652511, 0.685438 )
+texture = ExtResource( 2 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_left = 131.961
+margin_top = 100.109
+margin_right = 181.961
+margin_bottom = 140.109
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+margin_right = 58.0
+margin_bottom = 27.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+text = "tornar"
+flat = true
+
+[node name="Label" type="Label" parent="."]
+margin_left = 104.659
+margin_top = 38.1095
+margin_right = 212.659
+margin_bottom = 67.1095
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "has perdut"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_Button_pressed"]
