@@ -19,6 +19,10 @@ config/name="Ausies March"
 run/main_scene="res://Scenes/menus/Menu de inici.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Avio="*res://Scripts/avio.gd"
+
 [display]
 
 window/size/width=320
