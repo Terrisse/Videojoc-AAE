@@ -4,12 +4,10 @@ var moviment=Vector2()
 # per què no es pugui sortir de la pantalla:
 var pantalla
 onready var Posicio_avio=$Posicio_avio
-onready var Posicio_terra=$Posicio_terra
 onready var Timer_temps_bala=$Timer_temps_bala
 var bala= load("res://Scenes/bala.tscn")
 var direccio_bala=Vector2()
 signal explosio_collision
-signal terra_collision
 var fi_joc=false
 
 
@@ -50,7 +48,7 @@ func mou(delta):
 	else:
 		moviment=Vector2.ZERO
 	if fi_joc==false:
-		moviment.x= 200
+		moviment.x= 100
 	else:
 		moviment.x=0
 	
