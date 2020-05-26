@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Images/imatges mapes/nivell 1/nivell1tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Images/imatges mapes/nivell 1/terra 2.png" type="Texture" id=2]
@@ -7,9 +7,8 @@
 [ext_resource path="res://Scenes/avio.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/enemics i obstacles/explosió 1.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/enemics i obstacles/explosió 1b.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Scenes/nivells/nivell 1.gd" type="Script" id=8]
+[ext_resource path="res://Scripts/nivell 1.gd" type="Script" id=8]
 [ext_resource path="res://Scenes/enemics i obstacles/enemic1.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Scenes/enemics i obstacles/enemic1.gd" type="Script" id=10]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 21342.8, 19.6726 )
@@ -151,8 +150,10 @@ one_shot = true
 [node name="Timer_nou_enemic" type="Timer" parent="."]
 wait_time = 0.5
 
-[node name="enemic1" parent="." instance=ExtResource( 9 )]
+[node name="enemic1" parent="." groups=[
+"enemic1",
+] instance=ExtResource( 9 )]
 position = Vector2( 489, 225 )
-script = ExtResource( 10 )
+[connection signal="collisio_amb_enemic1" from="avio" to="." method="_on_avio_collisio_amb_enemic1"]
 [connection signal="timeout" from="Timer_inici_joc" to="." method="_on_Timer_inici_joc_timeout"]
 [connection signal="timeout" from="Timer_nou_enemic" to="." method="_on_Timer_nou_enemic_timeout"]

@@ -4,7 +4,7 @@
 [ext_resource path="res://Images/animacio enemic 1/2.png" type="Texture" id=2]
 [ext_resource path="res://Images/animacio enemic 1/1.png" type="Texture" id=3]
 [ext_resource path="res://Images/animacio enemic 1/3.png" type="Texture" id=4]
-[ext_resource path="res://Scenes/enemics i obstacles/enemic1.gd" type="Script" id=5]
+[ext_resource path="res://Scripts/enemic1.gd" type="Script" id=5]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -17,7 +17,9 @@ animations = [ {
 [sub_resource type="CircleShape2D" id=2]
 radius = 12.1632
 
-[node name="enemic1" type="KinematicBody2D"]
+[node name="enemic1" type="KinematicBody2D" groups=[
+"enemic1",
+]]
 script = ExtResource( 5 )
 
 [node name="animació" type="AnimatedSprite" parent="."]

@@ -9,6 +9,7 @@ var bala= load("res://Scenes/bala.tscn")
 var direccio_bala=Vector2()
 signal explosio_collision
 var fi_joc=false
+signal collisio_amb_enemic1
 
 
 
@@ -66,6 +67,12 @@ func _on_avio_body_entered(body):
 	pass # Replace with function body.
 	if body.is_in_group("explosio"):
 		emit_signal("explosio_collision")
+	if body.is_in_group("enemic1"):
+		emit_signal("collisio_amb_enemic1")
+	
+		
+	
+	
 	
 	
 	
