@@ -1,7 +1,6 @@
 extends Node2D
 
 
-
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -19,10 +18,7 @@ func _ready():
 
 func _on_Button_pressed():
 	get_tree().change_scene("res://Scenes/nivells/nivell 1.tscn")
-	
 
 
 func _on_Button2_pressed():
 	get_tree().change_scene("res://Scenes/menus/info.tscn")
-
-

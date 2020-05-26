@@ -46,11 +46,7 @@ height = 48.6705
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 0.854916, 0.81873 )
 frames = SubResource( 1 )
-<<<<<<< HEAD
-frame = 9
-=======
-frame = 16
->>>>>>> ded4f76c8cd1731a086b5e12dd716bc79c4bd0a2
+frame = 12
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
