@@ -38,7 +38,7 @@ func _on_Timer_nou_enemic_timeout():
 	
 	var E = enemic1.instance()
 	E.position.x=$avio.position.x + 1000
-	E.position.y= randi() % 800
+	E.position.y= rand_range(10, 142)
 	
 	
 	#E.position.x+=1000
@@ -58,3 +58,22 @@ func _on_avio_explosio_collision():
 func _on_avio_collisio_amb_enemic1():
 	game_over_nivell_1() 
 	pass 
+
+
+
+func _on_Timer_nova_explosio_timeout():
+	#var EX = explosio1.instance()
+	#var EX2 = explosio1b.instance()
+	#n = rand_range(1,3)
+	#if n == 1:
+		#EX.position.x = $avio.position.x + 1000
+		#EX.position.y = 10
+		#add_child(EX) 
+		#print('creacioeexplosio1')
+		
+	#else:
+		#EX2.position.x = $avio.position.x + 1000
+		#EX2.position.y = 142
+		#add_child(EX2) 
+		#print('creacioeexplosio1b')
+	pass
