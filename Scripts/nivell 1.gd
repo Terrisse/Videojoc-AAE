@@ -1,5 +1,7 @@
 extends Node
 export (PackedScene) var enemic1
+export (PackedScene) var explosio1
+export (PackedScene) var explosio1b
 var inici_nivell_1 =false
 
 
@@ -18,6 +20,7 @@ func _ready():
 	
 	
 func game_over_nivell_1():
+# warning-ignore:return_value_discarded
 	get_tree().change_scene("res://Scenes/menus/has perdut.tscn")
 	
 	
@@ -43,7 +46,7 @@ func _on_Timer_nou_enemic_timeout():
 	
 	#E.position.x+=1000
 	add_child(E) # es crea un nou enemic
-	print('creacioenemic')
+
 	
 	
 func _on_avio_explosio_collision():
@@ -62,18 +65,25 @@ func _on_avio_collisio_amb_enemic1():
 
 
 func _on_Timer_nova_explosio_timeout():
-	#var EX = explosio1.instance()
+	var ex = explosio1.instance()
+	ex.position.x=$avio.position.x + 1000
+	ex.position.y= 142
+	
+	
+	#E.position.x+=1000
+	add_child(ex) # es crea un nou enemic
+
+	
+	
 	#var EX2 = explosio1b.instance()
-	#n = rand_range(1,3)
+	#var n = rand_range(1,3)
 	#if n == 1:
 		#EX.position.x = $avio.position.x + 1000
 		#EX.position.y = 10
 		#add_child(EX) 
-		#print('creacioeexplosio1')
 		
 	#else:
 		#EX2.position.x = $avio.position.x + 1000
 		#EX2.position.y = 142
 		#add_child(EX2) 
-		#print('creacioeexplosio1b')
-	pass
+
