@@ -13,7 +13,7 @@ var pantalla
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pantalla=get_viewport_rect().size
-	
+
 
 
 
@@ -27,3 +27,4 @@ func mou(delta):
 	moviment.x=40
 	position-=moviment * delta
 	position.y=clamp(position.y,10,pantalla.y-40)
+
