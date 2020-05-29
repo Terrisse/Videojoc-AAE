@@ -7,10 +7,10 @@ onready var Posicio_avio=$Posicio_avio
 onready var Timer_temps_bala=$Timer_temps_bala
 var bala= load("res://Scenes/bala.tscn")
 var direccio_bala=Vector2()
-signal explosio_collision
 var fi_joc=false
+signal explosio_collision
 signal collisio_amb_enemic1
-
+signal collisio_amb_municion
 
 
 
@@ -26,14 +26,20 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	mou(delta)
-	anima()
+	
+	
 func disparar(bala) -> void:
-	if !self.Timer_temps_bala.is_stopped():
+	if !self.Timer_temps_bala.is_stopped() or int($Comptador.text)==0:
 		return 
+	if int($Comptador.text)>0:
+		var num_bales=int($Comptador.text)-1
+		$Comptador.text=str(num_bales)
+	
 	var nova_bala=bala.instance()
 	self.get_parent().add_child(nova_bala)
 	nova_bala.global_position=self.Posicio_avio.global_position
 	self.Timer_temps_bala.start()
+	
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -58,41 +64,17 @@ func mou(delta):
 		#moviment=moviment.normalized()*velocitat
 	position+=moviment * delta
 	position.y=clamp(position.y,10,pantalla.y-40)
-	
-func anima():
-	pass
+
 
 
 func _on_avio_body_entered(body):
-	pass # Replace with function body.
 	if body.is_in_group("explosio"):
 		emit_signal("explosio_collision")
 	if body.is_in_group("enemic1"):
 		emit_signal("collisio_amb_enemic1")
+	if body.is_in_group("municion"):
+		emit_signal("collisio_amb_municion")
+		body.queue_free()
+	
 	
 		
-	
-	
-	
-	
-	
-	
-
-	
-func game_over():
-	pass
-	
-
-
-func _on_avio_explosio_collision():
-	print("ha colisionat")
-	$AnimatedSprite.hide()
-	fi_joc=true
-	get_tree().change_scene("res://Scenes/menus/has perdut.tscn")
-	
-	
-	
-
-
-func _on_avio_terra_collision():
-	pass # Replace with function body.

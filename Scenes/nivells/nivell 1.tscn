@@ -1,13 +1,16 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Images/imatges mapes/nivell 1/nivell1tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Images/imatges mapes/nivell 1/terra 2.png" type="Texture" id=2]
 [ext_resource path="res://Images/imatges mapes/nivell 1/cel.png" type="Texture" id=3]
 [ext_resource path="res://Scenes/nivells/gp!.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/avio.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/enemics i obstacles/explosio1b.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/enemics i obstacles/explosio1.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scripts/nivell 1.gd" type="Script" id=8]
 [ext_resource path="res://Scenes/enemics i obstacles/enemic1.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/bala.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/municion.tscn" type="PackedScene" id=11]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 21342.8, 19.6726 )
@@ -15,6 +18,9 @@ extents = Vector2( 21342.8, 19.6726 )
 [node name="nivell 1" type="Node"]
 script = ExtResource( 8 )
 enemic1 = ExtResource( 9 )
+explosio1 = ExtResource( 7 )
+explosio1b = ExtResource( 6 )
+municion = ExtResource( 11 )
 
 [node name="fons" type="Node" parent="."]
 
@@ -70,12 +76,27 @@ wait_time = 1.5
 position = Vector2( 492.877, 99.6412 )
 
 [node name="bala" parent="." instance=ExtResource( 10 )]
+position = Vector2( 93, 231 )
 
-[node name="Timer_nova_explosio" type="Timer" parent="."]
-wait_time = 2.0
-one_shot = true
+[node name="Timer_nova_explosio_down" type="Timer" parent="."]
+wait_time = 3.0
 autostart = true
+
+[node name="Timer_nova_explosio_up" type="Timer" parent="."]
+wait_time = 4.0
+autostart = true
+
+[node name="Timer_municio" type="Timer" parent="."]
+wait_time = 4.5
+
+[node name="municion" parent="." instance=ExtResource( 11 )]
+position = Vector2( 203, 235 )
+scale = Vector2( 0.2, 0.2 )
 [connection signal="collisio_amb_enemic1" from="avio" to="." method="_on_avio_collisio_amb_enemic1"]
+[connection signal="collisio_amb_municion" from="avio" to="." method="_on_avio_collisio_amb_municion"]
+[connection signal="explosio_collision" from="avio" to="." method="_on_avio_explosio_collision"]
 [connection signal="timeout" from="Timer_inici_joc" to="." method="_on_Timer_inici_joc_timeout"]
 [connection signal="timeout" from="Timer_nou_enemic" to="." method="_on_Timer_nou_enemic_timeout"]
-[connection signal="timeout" from="Timer_nova_explosio" to="." method="_on_Timer_nova_explosio_timeout"]
+[connection signal="timeout" from="Timer_nova_explosio_down" to="." method="_on_Timer_nova_explosio_down_timeout"]
+[connection signal="timeout" from="Timer_nova_explosio_up" to="." method="_on_Timer_nova_explosio_up_timeout"]
+[connection signal="timeout" from="Timer_municio" to="." method="_on_Timer_municio_timeout"]

@@ -2,6 +2,8 @@ extends Node
 export (PackedScene) var enemic1
 export (PackedScene) var explosio1
 export (PackedScene) var explosio1b
+export (PackedScene) var municion
+
 var inici_nivell_1 =false
 
 
@@ -34,6 +36,7 @@ func game_over_nivell_1():
 
 func _on_Timer_inici_joc_timeout():
 	$Timer_nou_enemic.start()
+	$Timer_municio.start()
 	
 
 
@@ -64,26 +67,37 @@ func _on_avio_collisio_amb_enemic1():
 
 
 
-func _on_Timer_nova_explosio_timeout():
-	var ex = explosio1.instance()
-	ex.position.x=$avio.position.x + 1000
-	ex.position.y= 142
-	
-	
-	#E.position.x+=1000
-	add_child(ex) # es crea un nou enemic
+func _on_Timer_nova_explosio_down_timeout():
+	yield(get_tree().create_timer(1,rand_range(2,5)),"timeout") #aquesta funció genera un temps d'espera entre 1 i 5 abans de seguir amb la funció. 
+	var ex_down = explosio1.instance()
+	ex_down.position.x=$avio.position.x + rand_range(10,200)
+	ex_down.position.y= 142
+
+	add_child(ex_down) # es crea un nou foc
+
+
+func _on_Timer_nova_explosio_up_timeout():
+	yield(get_tree().create_timer(1,rand_range(2,5)),"timeout")
+	var ex_up = explosio1b.instance()
+	ex_up.position.x=$avio.position.x + rand_range(10,200)
+	ex_up.position.y= 10
+
+	add_child(ex_up) # es crea un nou foc
 
 	
-	
-	#var EX2 = explosio1b.instance()
-	#var n = rand_range(1,3)
-	#if n == 1:
-		#EX.position.x = $avio.position.x + 1000
-		#EX.position.y = 10
-		#add_child(EX) 
-		
-	#else:
-		#EX2.position.x = $avio.position.x + 1000
-		#EX2.position.y = 142
-		#add_child(EX2) 
 
+
+func _on_Timer_municio_timeout():
+	print("asdfh")
+	var m=municion.instance()
+	m.position.x=$avio.position.x + 500
+	m.position.y= rand_range(10,142)
+	add_child(m)
+
+
+func _on_avio_collisio_amb_municion():
+	var bales_actuals=int($avio/Comptador.text)
+	bales_actuals+=3 #cada cop que s'agafi la municio s'incrementaran les bales, es pot posar límit.
+	$avio/Comptador.text=str(bales_actuals)
+	
+	
