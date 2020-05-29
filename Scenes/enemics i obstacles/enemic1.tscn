@@ -19,11 +19,13 @@ radius = 12.1632
 
 [node name="enemic1" type="KinematicBody2D" groups=[
 "enemic1",
+"enemics",
 ]]
 script = ExtResource( 5 )
 
 [node name="animació" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
+frame = 1
 playing = true
 flip_h = true
 

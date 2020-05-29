@@ -2,6 +2,8 @@ extends KinematicBody2D
 var velocitat=200
 var moviment=Vector2()
 var pantalla
+export var vida=1 
+
 
 
 

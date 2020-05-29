@@ -29,8 +29,13 @@ func _on_Timer_eliminar_bala_timeout():
 
 
 func _on_bala_body_entered(body):
-	
-	if body.is_in_group("enemic1"):
-		body.queue_free() #aquí elimino la instància de l'enemic1
-		queue_free() #aquí elimino la instància de la bala 
+	#creo un grup comú per tots els enemics perquè en funció de la vida que tinguin a la variable body.vida, controlem les bales necessàries per matar a l'enemic. 
+	#Fixant la variable vida a 1, 2 ,3 en funció del nivell, establim la dificultat per cada nivell. 
+	if body.is_in_group("enemics"):
+
+		if body.vida>0:
+			body.vida-=1
+		if body.vida==0:
+			body.queue_free() #aquí elimino la instància de l'enemic1
+			queue_free() #aquí elimino la instància de la bala 
 		
