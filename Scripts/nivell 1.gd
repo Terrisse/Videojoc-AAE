@@ -88,7 +88,7 @@ func _on_Timer_nova_explosio_up_timeout():
 
 
 func _on_Timer_municio_timeout():
-	print("asdfh")
+	
 	var m=municion.instance()
 	m.position.x=$avio.position.x + 500
 	m.position.y= rand_range(10,142)

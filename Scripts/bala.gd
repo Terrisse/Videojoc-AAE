@@ -31,17 +31,17 @@ func _on_Timer_eliminar_bala_timeout():
 func _on_bala_body_entered(body):
 	#creo un grup comú per tots els enemics perquè en funció de la vida que tinguin a la variable body.vida, controlem les bales necessàries per matar a l'enemic. 
 	#Fixant la variable vida a 1, 2 ,3 en funció del nivell, establim la dificultat per cada nivell. 
-	print('bala')
+	
 	if body.is_in_group("enemics"):
-		
-		if body.vida>0:
-			body.vida-=1
-			#$body/vida_enemic.Text="3" No funciona
-		if body.vida==0:
-			body.queue_free() #aquí elimino la instància de l'enemic1
+		print("bala")
 		queue_free() #aquí elimino la instància de la bala 
 		
 
 
 func _on_VisibilityNotifier2D_screen_exited():
 	queue_free() # Replace with function body.
+
+
+func _on_bala_area_entered(area):
+	if area.is_in_group("enemics"):
+		queue_free() #aquí elimino la instància de la bala. 

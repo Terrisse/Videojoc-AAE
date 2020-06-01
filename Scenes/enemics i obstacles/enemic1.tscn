@@ -22,7 +22,7 @@ animations = [ {
 [sub_resource type="CircleShape2D" id=2]
 radius = 12.1632
 
-[node name="enemic1" type="KinematicBody2D" groups=[
+[node name="enemic1" type="Area2D" groups=[
 "enemic1",
 "enemics",
 ]]
@@ -47,3 +47,4 @@ text = "0"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+[connection signal="area_entered" from="." to="." method="_on_enemic1_area_entered"]

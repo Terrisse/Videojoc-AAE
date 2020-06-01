@@ -55,7 +55,7 @@ func mou(delta):
 	else:
 		moviment=Vector2.ZERO
 	if fi_joc==false:
-		moviment.x= 200
+		moviment.x= 100
 	else:
 		moviment.x=0
 	
@@ -70,11 +70,15 @@ func mou(delta):
 func _on_avio_body_entered(body):
 	if body.is_in_group("explosio"):
 		emit_signal("explosio_collision")
-	if body.is_in_group("enemic1"):
-		emit_signal("collisio_amb_enemic1")
+	
 	if body.is_in_group("municion"):
 		emit_signal("collisio_amb_municion")
 		body.queue_free()
 	
 	
 		
+
+
+func _on_avio_area_entered(area):
+	if area.is_in_group("enemic1"):
+		emit_signal("collisio_amb_enemic1")

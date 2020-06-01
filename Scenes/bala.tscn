@@ -6,7 +6,9 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8.86253, 3.02209 )
 
-[node name="bala" type="Area2D"]
+[node name="bala" type="Area2D" groups=[
+"bala",
+]]
 position = Vector2( 106, 75 )
 scale = Vector2( 0.3, 0.5 )
 script = ExtResource( 2 )
@@ -24,6 +26,7 @@ one_shot = true
 autostart = true
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+[connection signal="area_entered" from="." to="." method="_on_bala_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_bala_body_entered"]
 [connection signal="timeout" from="Timer_eliminar_bala" to="." method="_on_Timer_eliminar_bala_timeout"]
 [connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
