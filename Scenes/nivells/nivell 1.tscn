@@ -72,9 +72,6 @@ one_shot = true
 [node name="Timer_nou_enemic" type="Timer" parent="."]
 wait_time = 1.5
 
-[node name="enemic1" parent="." instance=ExtResource( 9 )]
-position = Vector2( 492.877, 99.6412 )
-
 [node name="bala" parent="." instance=ExtResource( 10 )]
 position = Vector2( 93, 231 )
 
