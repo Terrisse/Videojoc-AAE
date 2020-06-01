@@ -55,7 +55,7 @@ position = Vector2( 55.143, 58.2583 )
 scale = Vector2( 0.663987, 0.663988 )
 
 [node name="avio" parent="." instance=ExtResource( 5 )]
-position = Vector2( 28.3156, 22.6137 )
+position = Vector2( 13.0271, 97.7904 )
 
 [node name="limit" type="Area2D" parent="."]
 

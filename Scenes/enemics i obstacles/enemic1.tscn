@@ -12,6 +12,11 @@ animations = [ {
 "loop": true,
 "name": "default",
 "speed": 18.0
+}, {
+"frames": [ ExtResource( 3 ), null ],
+"loop": true,
+"name": "mal",
+"speed": 5.0
 } ]
 
 [sub_resource type="CircleShape2D" id=2]
@@ -25,7 +30,6 @@ script = ExtResource( 5 )
 
 [node name="animació" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
-frame = 1
 playing = true
 flip_h = true
 

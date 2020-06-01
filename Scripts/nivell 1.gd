@@ -97,7 +97,7 @@ func _on_Timer_municio_timeout():
 
 func _on_avio_collisio_amb_municion():
 	var bales_actuals=int($avio/Comptador.text)
-	bales_actuals+=3 #cada cop que s'agafi la municio s'incrementaran les bales, es pot posar límit.
+	bales_actuals+=5 #cada cop que s'agafi la municio s'incrementaran les bales, es pot posar límit.
 	$avio/Comptador.text=str(bales_actuals)
 	
 	

@@ -22,5 +22,8 @@ shape = SubResource( 1 )
 wait_time = 4.0
 one_shot = true
 autostart = true
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
 [connection signal="body_entered" from="." to="." method="_on_bala_body_entered"]
 [connection signal="timeout" from="Timer_eliminar_bala" to="." method="_on_Timer_eliminar_bala_timeout"]
+[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]

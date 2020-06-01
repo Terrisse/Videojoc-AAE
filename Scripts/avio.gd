@@ -55,7 +55,7 @@ func mou(delta):
 	else:
 		moviment=Vector2.ZERO
 	if fi_joc==false:
-		moviment.x= 100
+		moviment.x= 200
 	else:
 		moviment.x=0
 	
