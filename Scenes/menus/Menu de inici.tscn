@@ -51,6 +51,7 @@ margin_left = 110.369
 margin_top = 42.6074
 margin_right = 201.369
 margin_bottom = 56.6074
+rect_pivot_offset = Vector2( 31.2386, 9.30283 )
 text = "TITOL DEL JOC"
 __meta__ = {
 "_edit_use_anchors_": false
