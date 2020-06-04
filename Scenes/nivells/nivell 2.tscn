@@ -1,21 +1,10 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Images/imatges mapes/nivell 2/lluna2.png" type="Texture" id=1]
 [ext_resource path="res://Images/imatges mapes/nivell 1/nivell1tileset.tres" type="TileSet" id=2]
 [ext_resource path="res://Scenes/avio.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scripts/nivell 2.gd" type="Script" id=4]
-[ext_resource path="res://Scenes/enemics i obstacles/explosio1b.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Scenes/enemics i obstacles/enemic1.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Scenes/enemics i obstacles/explosio1.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Scenes/municion.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Scenes/bala.tscn" type="PackedScene" id=9]
 
 [node name="nivell 2" type="Node"]
-script = ExtResource( 4 )
-enemic1 = ExtResource( 6 )
-explosio1 = ExtResource( 7 )
-explosio1b = ExtResource( 5 )
-municion = ExtResource( 8 )
 
 [node name="fons" type="Node" parent="."]
 
@@ -33,32 +22,3 @@ tile_data = PoolIntArray( 196611, 3, 0, 262148, 1, 0, 393215, 0, 0, 327680, 0, 0
 
 [node name="avio" parent="." instance=ExtResource( 3 )]
 position = Vector2( 38.2872, 87.6355 )
-
-[node name="timer_inici_de_joc" type="Timer" parent="."]
-one_shot = true
-
-[node name="timer_nou_enemic" type="Timer" parent="."]
-wait_time = 1.2
-
-[node name="timer_nova_explosio" type="Timer" parent="."]
-wait_time = 3.0
-autostart = true
-
-[node name="timer_nova_explosio2" type="Timer" parent="."]
-wait_time = 3.5
-autostart = true
-
-[node name="timer_municio" type="Timer" parent="."]
-wait_time = 5.0
-
-[node name="bala" parent="." instance=ExtResource( 9 )]
-
-[node name="municion" parent="." instance=ExtResource( 8 )]
-[connection signal="collisio_amb_enemic1" from="avio" to="." method="_on_avio_collisio_amb_enemic1"]
-[connection signal="collisio_amb_municion" from="avio" to="." method="_on_avio_collisio_amb_municion"]
-[connection signal="explosio_collision" from="avio" to="." method="_on_avio_explosio_collision"]
-[connection signal="timeout" from="timer_inici_de_joc" to="." method="_on_timer_inici_de_joc_timeout"]
-[connection signal="timeout" from="timer_nou_enemic" to="." method="_on_timer_nou_enemic_timeout"]
-[connection signal="timeout" from="timer_nova_explosio" to="." method="_on_timer_nova_explosio_timeout"]
-[connection signal="timeout" from="timer_nova_explosio2" to="." method="_on_timer_nova_explosio2_timeout"]
-[connection signal="timeout" from="timer_municio" to="." method="_on_timer_municio_timeout"]

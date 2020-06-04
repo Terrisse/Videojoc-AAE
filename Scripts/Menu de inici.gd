@@ -16,9 +16,25 @@ func _ready():
 #	pass
 
 
+
 func _on_Button_pressed():
+	Global.nivell_joc=2
 	get_tree().change_scene("res://Scenes/nivells/nivell 1.tscn")
+	
 
 
 func _on_Button2_pressed():
-	get_tree().change_scene("res://Scenes/menus/info.tscn")
+	get_tree().quit()
+
+
+func _on_dificil_pressed():
+	Global.nivell_joc=3
+	get_tree().change_scene("res://Scenes/nivells/nivell 1.tscn")
+	
+	
+
+
+func _on_facil_pressed():
+	Global.nivell_joc=1
+	get_tree().change_scene("res://Scenes/nivells/nivell 1.tscn")
+	

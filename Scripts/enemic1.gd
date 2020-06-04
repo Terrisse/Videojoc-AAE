@@ -16,7 +16,10 @@ export var vida=2
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pantalla=get_viewport_rect().size
+	vida=Global.nivell_joc
 	$vida_enemic.text=str(vida)
+	
+
 	
 
 

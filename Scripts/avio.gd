@@ -28,6 +28,7 @@ func _process(delta):
 	mou(delta)
 	
 	
+	
 func disparar(bala) -> void:
 	if !self.Timer_temps_bala.is_stopped() or int($Comptador.text)==0:
 		return 
@@ -44,6 +45,8 @@ func disparar(bala) -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func mou(delta):
+	if position.x>=19900:
+		get_tree().change_scene("res://Scenes/hasguanyat.tscn")
 	
 	if Input.is_action_pressed("disparar"):
 		disparar(bala)
@@ -55,7 +58,7 @@ func mou(delta):
 	else:
 		moviment=Vector2.ZERO
 	if fi_joc==false:
-		moviment.x= 100
+		moviment.x=100
 	else:
 		moviment.x=0
 	
