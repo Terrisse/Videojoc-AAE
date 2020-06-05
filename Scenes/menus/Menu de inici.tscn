@@ -1,14 +1,19 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scripts/Menu de inici.gd" type="Script" id=1]
 [ext_resource path="res://Images/menus/f364b7d0a49566891789d291b8b2e53f.png" type="Texture" id=2]
 [ext_resource path="res://Images/fonts/911Fonts.com_CenturyGothicBoldItalic__-_911fonts.com_fonts_kjcn.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Images/fonts/chinese rocks rg.ttf" type="DynamicFontData" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=2]
 font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 26
+font_data = ExtResource( 4 )
 
 [node name="Menu de inici" type="Node2D"]
 script = ExtResource( 1 )
@@ -83,11 +88,14 @@ text = "Difícil"
 flat = true
 
 [node name="Label" type="Label" parent="."]
-margin_left = 110.369
-margin_top = 42.6074
-margin_right = 201.369
-margin_bottom = 56.6074
-text = "WATCH OUT"
+margin_left = 116.355
+margin_top = 38.2335
+margin_right = 194.355
+margin_bottom = 70.2335
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "JOC AAE"
 __meta__ = {
 "_edit_use_anchors_": false
 }
